@@ -1,10 +1,11 @@
-import { GET_TEAM, UPLOAD_IMAGE } from "./action"
+import { GET_TEAM, UPLOAD_IMAGE, SELECT_CATEGORY } from "./action"
 
 
 // ----> Estado Inicial <----
 const initialState = {
     team: [],
-    teamRespaldo: []
+    teamRespaldo: [],
+    category: []
 }
 
 // ---> REDUCER <-----
@@ -17,6 +18,12 @@ const reducer = (state = initialState, { type, payload }) => {
                 ...state,
                 team: payload,
                 teamRespaldo: payload
+            }
+
+        case SELECT_CATEGORY: 
+            return {
+                ...state,
+                category: payload
             }
         case UPLOAD_IMAGE:
             const allTeam = [...state.team]

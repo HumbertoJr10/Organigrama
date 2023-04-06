@@ -3,17 +3,20 @@ import { useEffect, useState } from "react";
 import UseParse from "../hook/useParse";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { selectCategory } from "../redux/action";
 
 function Landing() {
   const { handlerFile } = UseParse();
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const data = useSelector((state) => state.team);
+  const allCategory = useSelector(state => state.category)
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
     if (data.length) {
-      setCategory(Object.keys(data[0]));
+      dispatch(selectCategory(Object.keys(data[0])));
     }
   }, [data]);
 
@@ -28,7 +31,7 @@ function Landing() {
 
       {data.length && (
         <div className="previewModal">
-          {category.map((categoria, index) => {
+          {allCategory.map((categoria, index) => {
             return (
               <div id={index} className="columna">
                 <h1>{categoria}</h1>
