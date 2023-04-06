@@ -2,9 +2,11 @@ import "../styles/landing.scss";
 import { useEffect, useState } from "react";
 import UseParse from "../hook/useParse";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 
 function Landing() {
   const { handlerFile } = UseParse();
+  const navigate = useNavigate()
 
   const data = useSelector((state) => state.team);
   const [category, setCategory] = useState([]);
@@ -15,7 +17,7 @@ function Landing() {
     }
   }, [data]);
 
-  console.log(category);
+  console.log(data);
 
   return (
     <div className="container">
@@ -38,7 +40,7 @@ function Landing() {
           })}
 
           <div className="buttonContainer">
-            <button>Continuar</button>
+            <button onClick={()=> navigate('/Organizationchart')}>Continuar</button>
           </div>
         </div>
       )}
