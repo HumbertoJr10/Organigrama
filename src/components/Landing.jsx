@@ -7,8 +7,15 @@ function Landing() {
   const { handlerFile } = UseParse();
 
   const data = useSelector((state) => state.team);
+  const [category, setCategory] = useState([]);
 
-  console.log(data);
+  useEffect(() => {
+    if (data.length) {
+      setCategory(Object.keys(data[0]));
+    }
+  }, [data]);
+
+  console.log(category);
 
   return (
     <div className="container">
@@ -18,115 +25,22 @@ function Landing() {
       </div>
 
       {data.length && (
-       
         <div className="previewModal">
-                <div className="columna">
-                    <h1>Area</h1>
-                    {data?.map((e, i) => {
-                    return (
-                        <div id={'area' + i}>
-                        <p>{e.Area}</p>
-                        </div>
-                    );
-                    })}
-                </div>
+          {category.map((categoria, index) => {
+            return (
+              <div id={index} className="columna">
+                <h1>{categoria}</h1>
+                {data.map((e) => (
+                  <p>{e[categoria]}</p>
+                ))}
+              </div>
+            );
+          })}
 
-                <div className="columna">
-                    <h1>Division</h1>
-                    {data?.map((e, i) => {
-                    return (
-                        <div id={"division" + i}>
-                        <p>{e["División"]}</p>
-                        </div>
-                    );
-                    })}
-                </div>
-                <div className="columna">
-                    <h1>Fecha de ingreso</h1>
-                    {data?.map((e, i) => {
-                    return (
-                        <div id={'fecha' + i}>
-                        <p>{e["Fecha de ingreso"]}</p>
-                        </div>
-                    );
-                    })}
-                </div>
-                <div className="columna">
-                    <h1>ID</h1>
-                    {data?.map((e, i) => {
-                    return (
-                        <div id={'id' + i}>
-                        <p>{e["ID"]}</p>
-                        </div>
-                    );
-                    })}
-                </div>
-                <div className="columna">
-                    <h1>ID Lider</h1>
-                    {data?.map((e, i) => {
-                    return (
-                        <div id={'idLider' + i}>
-                        <p>{e["ID Lider"]}</p>
-                        </div>
-                    );
-                    })}
-                </div>
-                <div className="columna">
-                    <h1>Mes</h1>
-                    {data?.map((e, i) => {
-                    return (
-                        <div id={'mes' + i}>
-                        <p>{e["Mes"]}</p>
-                        </div>
-                    );
-                    })}
-                </div>
-                <div className="columna">
-                    <h1>Nivel Jerárquico</h1>
-                    {data?.map((e, i) => {
-                    return (
-                        <div id={'nivelJerarquico' + i}>
-                        <p>{e["Nivel Jerárquico"]}</p>
-                        </div>
-                    );
-                    })}
-                </div>
-                <div className="columna">
-                    <h1>Nombre</h1>
-                    {data?.map((e, i) => {
-                    return (
-                        <div id={'nombre' + i}>
-                        <p>{e["Nombre "]}</p>
-                        </div>
-                    );
-                    })}
-                </div>
-                <div className="columna">
-                    <h1>Subarea</h1>
-                    {data?.map((e, i) => {
-                    return (
-                        <div id={'subarea' + i}>
-                        <p>{e["Subarea"]}</p>
-                        </div>
-                    );
-                    })}
-                </div>
-                <div className="columna">
-                    <h1>Sueldo bruto</h1>
-                    {data?.map((e, i) => {
-                    return (
-                        <div id={'sueldo' + i}>
-                        <p>{e["Sueldo bruto"]}</p>
-                        </div>
-                    );
-                    })}
-                </div>
-                <div className="buttonContainer">
-                    <button>Continuar</button>
-                </div>    
+          <div className="buttonContainer">
+            <button>Continuar</button>
+          </div>
         </div>
-      
-
       )}
     </div>
   );
