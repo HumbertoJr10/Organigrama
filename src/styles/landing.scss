@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://www.directivosyempresas.com/wp-content/uploads/2019/08/cropped-equipos-de-trabajo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px); 
+    background-size: cover;
+
+
+    .modalWindow {
+        width: 500px;
+        height: 300px;
+        background-color: rgba(0, 0, 0, 0.87);
+        backdrop-filter: blur(5px); 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+
+        h1 {
+            color: white;
+
+        }
+    }
+
+    .previewModal {
+        width: 80%;
+        
+    }
+}
