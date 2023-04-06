@@ -10,7 +10,7 @@ function Organigrama() {
   const [supervisor, setSupervisor] = useState([])
   const [coordinador, setCoordinador] = useState([])
   const [profesional, setProfesional] = useState([])
-  const [file, setFile] = useState("")
+
 
   const data = useSelector((state) => state.team);
 
@@ -34,7 +34,6 @@ function Organigrama() {
     }
   };
 
-  console.log(file);
 
   useEffect( ()=> {
     if (data.length) {

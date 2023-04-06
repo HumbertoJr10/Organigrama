@@ -1,0 +1,29 @@
+.Nav_Container {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    background-color: #2B61FE;
+    display: flex;
+    justify-content: space-between;
+    
+    img {
+        width: 70px;
+        margin-left: 50px;
+    }
+
+    .Nav_Menu {
+        display: flex;
+        align-items: center;
+        color: white;
+        margin-right: 50px;
+
+        p {
+            font-family: 'Righteous', cursive;
+            margin-left: 25px;
+            cursor: pointer;
+            &:hover {
+                color: #162d74;
+            }
+        }
+    }
+}
