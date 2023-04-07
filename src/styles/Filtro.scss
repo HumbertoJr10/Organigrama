@@ -25,14 +25,24 @@
         background-color: #edf2f4;
         margin-top: 80px;
         padding: 15px;
+        border-radius: 20px;
 
         .filtro_header {
             display: flex;
             align-items: center;
+            cursor: pointer;
 
-            p {
+            .nonSelected {
                 width: 200px;
                 text-align: center;
+                font-weight: bold;
+            }
+
+            .SortSelected {
+                width: 200px;
+                text-align: center;
+                font-weight: bolder;
+                text-decoration: underline;
             }
         }
 
@@ -42,8 +52,10 @@
 
             .onePerson_Filter {
                 display: flex;
+                
                 &:hover {
-                    background-color: gray;
+                    background-color: #162d74;
+                    color: white;
                 }
 
                 p {

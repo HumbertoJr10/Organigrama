@@ -1,4 +1,4 @@
-import { GET_TEAM, UPLOAD_IMAGE, SELECT_CATEGORY } from "./action"
+import { GET_TEAM, UPLOAD_IMAGE, SELECT_CATEGORY, SORT_ELEMENT, SORT_ELEMENT_NEGATIVE } from "./action"
 
 
 // ----> Estado Inicial <----
@@ -18,6 +18,17 @@ const reducer = (state = initialState, { type, payload }) => {
                 ...state,
                 team: payload,
                 teamRespaldo: payload
+            }
+        
+        case SORT_ELEMENT:
+            return {
+                ...state,
+                team: [...state.teamRespaldo].sort( (x, y) => x[payload].localeCompare( y[payload]))
+            }
+        case SORT_ELEMENT_NEGATIVE:
+            return {
+                ...state,
+                team: [...state.teamRespaldo].sort( (x, y) => y[payload].localeCompare( x[payload]))
             }
 
         case SELECT_CATEGORY: 

@@ -1,10 +1,28 @@
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { sortElment, sortElmentNegative } from "../redux/action";
 import "../styles/Filtro.scss"
 
 
 function Filtro() {
     const data = useSelector(state => state.team)
     const allCategory = useSelector( state => state.category)
+    const [sortActive, setSortActive] = useState("") 
+    const dispatch = useDispatch()
+
+    const handlerSort = (sort) => {
+
+        const signo = "+"
+
+        if (!sortActive.includes(signo)) {
+            setSortActive(sort + "+")
+            dispatch(sortElment(sort))
+        } else {
+            setSortActive(sort)
+            dispatch(sortElmentNegative(sort))
+        }
+
+    }
 
     return (
         <div className="Filtro_Overlay">
@@ -13,7 +31,7 @@ function Filtro() {
                 <div className="filtro_header">
                     {
                         allCategory.map( category => (
-                            <p>{category}</p>
+                            <p className={sortActive.includes(category) ? "SortSelected" : "nonSelected"} onClick={()=> handlerSort(category)}>{category}</p>
                         ))
                     }
                 </div>
