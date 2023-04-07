@@ -30,12 +30,12 @@ const reducer = (state = initialState, { type, payload }) => {
         case SORT_ELEMENT:
             return {
                 ...state,
-                team: [...state.teamRespaldo].sort( (x, y) => x[payload].localeCompare( y[payload]))
+                data: [...state.teamRespaldo].sort( (x, y) => x[payload].localeCompare( y[payload]))
             }
         case SORT_ELEMENT_NEGATIVE:
             return {
                 ...state,
-                team: [...state.teamRespaldo].sort( (x, y) => y[payload].localeCompare( x[payload]))
+                data: [...state.teamRespaldo].sort( (x, y) => y[payload].localeCompare( x[payload]))
             }
 
         case SELECT_CATEGORY: 

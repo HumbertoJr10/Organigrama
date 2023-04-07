@@ -19,7 +19,7 @@ function Landing() {
   useEffect(() => {
     if (data.length) {
       dispatch(selectCategory(Object.keys(data[0])));
-      const unicos = removeDuplicates(data)
+      const unicos = removeDuplicates(data, "ID")
       dispatch(getTeam(unicos))
     }
   }, [data]);
