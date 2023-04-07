@@ -28,6 +28,7 @@ function Landing() {
 
   return (
     <div className="container">
+      <div className="overlay"></div>
       <div className="modalWindow">
         <h1>Bienvenido</h1>
         <input onChange={handlerFile} type="file" accept=".csv" name="file" />

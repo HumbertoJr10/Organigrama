@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeDuplicates, calculateTotal, calculateContratation } from "../helper/function";
+import { removeDuplicates, calculateTotal, calculateContratation, calculatePromotion } from "../helper/function";
 import { sortElment, sortElmentNegative } from "../redux/action";
 import "../styles/Filtro.scss"
 
@@ -12,6 +12,7 @@ function Filtro() {
     const [mes, setMes] = useState([])
     const [mesSelected, setMesSelected] = useState("")
     const [contratation, setContratation] = useState([])
+    const [promotion, setPromotion] = useState([])
     const dispatch = useDispatch()
 
     useEffect(()=> {
@@ -26,13 +27,13 @@ function Filtro() {
 
     useEffect( ()=> {
         if (data.length) {
-
+            setPromotion(calculatePromotion(data, mesSelected))
             setContratation(calculateContratation(data, mesSelected))
         }
     
     }, [mesSelected])
 
-    
+    calculatePromotion(data, 3)
 
     const handlerSort = (sort) => {
 
@@ -95,6 +96,11 @@ function Filtro() {
                     </div>
                     <div>
                         <h3>Promovido</h3>
+                        {
+                            promotion.map( nombre => (
+                                <p>{nombre}</p>
+                            ))
+                        }
                     </div>
                     <div>
                         <h3>Contratado</h3>
