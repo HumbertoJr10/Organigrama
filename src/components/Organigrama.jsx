@@ -12,6 +12,7 @@ function Organigrama() {
   const [supervisor, setSupervisor] = useState([])
   const [coordinador, setCoordinador] = useState([])
   const [profesional, setProfesional] = useState([])
+  const language = useSelector( state => state.language)
 
 
   const data = useSelector((state) => state.team);
@@ -55,7 +56,7 @@ function Organigrama() {
       <div className="overflow"></div>
       <div className="modal_Organigrama">
         <div className="Personal_container">
-          <h1>Manager</h1>
+          <h1>{language == 'ES'? "Mánager": "Manager" }</h1>
           <div className="allPersonal">
             {
                 manager.map((persona) => (
@@ -79,7 +80,7 @@ function Organigrama() {
           </div>
         </div>
         <div className="Personal_container">
-          <h1>Supervisor</h1>
+          <h1>{language == 'ES'? "Supervisor": "Supervisor"}</h1>
           <div className="allPersonal">
             {
                 supervisor.map((persona) => (
@@ -104,7 +105,7 @@ function Organigrama() {
         </div>
         {/* <div className="supervisor_container"></div> */}
         <div className="Personal_container">
-          <h1>Coordinador</h1>
+          <h1>{language == 'ES'? "Coordinador" : "Coordinator"}</h1>
           <div className="allPersonal">
             {
                 coordinador.map((persona) => (
@@ -129,7 +130,7 @@ function Organigrama() {
         </div>
         {/* <div className="coordinador_container"></div> */}
         <div className="Personal_container">
-          <h1>Profesional</h1>
+          <h1>{language == 'ES' ? "Profesional" : "Professional"}</h1>
           <div className="allPersonal">
             {
                 profesional.map((persona) => (
