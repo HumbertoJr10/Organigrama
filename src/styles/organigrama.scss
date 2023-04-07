@@ -53,6 +53,14 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
+
+            @media print {
+                .print-container {
+                  width: 100%;
+                  margin: 0;
+                  padding: 0;
+                }
+            }
             
             h1 {
                 color: #264653;
@@ -87,6 +95,7 @@
     height: 70px;
     margin-right: 10px;
     cursor: pointer;
+    border-radius: 100%;
     transition: transform .1s ease;
 
     &:hover {
@@ -104,3 +113,23 @@
         }
     }
 }
+
+.imprimir_container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+
+    img {
+        width: 40px;
+        margin-right: 20px;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    
+    button {
+        cursor: pointer;
+    }
+}
+

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeImage } from "../redux/action";
 import "../styles/organigrama.scss";
+import { handlerprint } from "../helper/function";
+import printIcon from '../assets/printIcon.svg'
 
 function Organigrama() {
 
@@ -44,7 +46,7 @@ function Organigrama() {
     } 
   }, [data])
 
-  
+
 
   
 
@@ -149,6 +151,9 @@ function Organigrama() {
                 </div>
               ))}
           </div>
+        </div>
+        <div className="imprimir_container">
+          <img onClick={handlerprint} src={printIcon} /> 
         </div>
       </div>
     </div>

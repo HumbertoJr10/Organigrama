@@ -63,18 +63,23 @@ export function calculatePromotion(arr, mes) {
         }
     })
 
-    const totalEmpleados2 = arr.filter(e=> e.Mes == (mes*1 + 1) + "-2020")
+    const totalEmpleados2 = arr.filter(e=> e.Mes == (mes*1 - 1) + "-2020")
     const evaluar = totalEmpleados2.map( e => ({
         id: e["ID"],
         salary: e["Sueldo  bruto"],
         nombre: e["Nombre "]
     })) 
-
+    
+    console.log(evaluar)
+    console.log(empleadosSalary)
     const promovidos = []
 
     for (let f=0; f<empleadosSalary.length; f++) {
         for ( let i=0; i<evaluar.length; i++) {
-            if (empleadosSalary[f].id == evaluar[i].id && empleadosSalary[f].salary< evaluar[i].salary) {
+            if (
+                empleadosSalary[f].id == evaluar[i].id && 
+                empleadosSalary[f].salary > evaluar[i].salary
+                ) {
                 promovidos.push(empleadosSalary[f])
             }
         }
@@ -86,3 +91,7 @@ export function calculatePromotion(arr, mes) {
     return format
 
 }
+
+export const handlerprint = () => {
+    window.print()
+  }

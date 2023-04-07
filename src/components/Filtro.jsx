@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeDuplicates, calculateTotal, calculateContratation, calculatePromotion } from "../helper/function";
+import { removeDuplicates, calculateTotal, calculateContratation, calculatePromotion, handlerprint } from "../helper/function";
 import { sortElment, sortElmentNegative } from "../redux/action";
+import printIcon from '../assets/printIcon.svg'
 import "../styles/Filtro.scss"
 
 
@@ -17,7 +18,6 @@ function Filtro() {
 
     useEffect(()=> {
         const unicos = removeDuplicates(data, "Mes")
-        console.log(unicos);
         const meses = []
         for (let f=0; f<unicos.length; f++) {
             meses.push(unicos[f].Mes[0])
@@ -33,7 +33,7 @@ function Filtro() {
     
     }, [mesSelected])
 
-    calculatePromotion(data, 3)
+    calculatePromotion(data, 5)
 
     const handlerSort = (sort) => {
 
@@ -77,6 +77,9 @@ function Filtro() {
                             </div>
                         ))
                     }
+                </div>
+                <div className="imprimir_container">
+                    <img onClick={handlerprint} src={printIcon} /> 
                 </div>
            </div>
            <div className="filtro_mensual">
