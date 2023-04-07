@@ -51,8 +51,6 @@ function Organigrama() {
   return (
     <div className="Organigrama_container">
       <div className="overflow"></div>
-      {/* <input onChange={uploadImage} type="file" /> */}
-
       <div className="modal_Organigrama">
         <div className="Personal_container">
           <h1>Manager</h1>
@@ -152,7 +150,6 @@ function Organigrama() {
               ))}
           </div>
         </div>
-        {/* <div className="profesional_container"></div> */}
       </div>
     </div>
   );
