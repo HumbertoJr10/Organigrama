@@ -34,19 +34,19 @@ export function calculateContratation(arr, mes) {
     const totalEmpleados = arr.filter( e=> e.Mes == mes + "-2020")
     const idsEmpleados = totalEmpleados.map( e=> e["Nombre "])
     let contratados = []
-    console.log(idsEmpleados)
+    
 
     const totalEmpleados2 = arr.filter(e=> e.Mes == (mes*1 - 1) + "-2020")
     const evaluar = totalEmpleados2.map( e=> e["Nombre "])
    
 
-    if (!evaluar) return []
+    if (!evaluar.length) return []
 
 
     for (let f=0; f<idsEmpleados.length; f++) {
         if (!evaluar.includes(idsEmpleados[f])) {
             contratados.push(idsEmpleados[f])
-            console.log("no incluye el empleado " + idsEmpleados[f])
+            
         }
     }
  
