@@ -72,7 +72,7 @@ function Organigrama() {
                     <p>{persona.Area} / {persona.Subarea}</p>
                     <p>{persona["Fecha de ingreso"]}</p>
                     <div className="persona_SueldoContainer">
-                      <h4>$ {persona["Sueldo  bruto"]}</h4>
+                    <h4>$ {persona["Sueldo  bruto"] || persona["Sueldo bruto"]}</h4>
                     </div>
                   </div>
                 </div>
@@ -92,11 +92,11 @@ function Organigrama() {
                         <input id={`input-${persona.ID}`} type="file" style={{ display: "none" }} onChange={(e) => uploadImage(e, persona.ID)} />
                     </div>
                   <div className="personaINF_side">
-                    <h3>{persona["Nombre "]}</h3>
+                    <h3>{persona["Nombre "] || persona["Nombre"]}</h3>
                     <p>{persona.Area} / {persona.Subarea}</p>
                     <p>{persona["Fecha de ingreso"]}</p>
                     <div className="persona_SueldoContainer">
-                      <h4>$ {persona["Sueldo  bruto"]}</h4>
+                    <h4>$ {persona["Sueldo  bruto"] || persona["Sueldo bruto"]}</h4>
                     </div>
                   </div>
                 </div>
@@ -117,11 +117,11 @@ function Organigrama() {
                         <input id={`input-${persona.ID}`} type="file" style={{ display: "none" }} onChange={(e) => uploadImage(e, persona.ID)} />
                     </div>
                   <div className="personaINF_side">
-                    <h3>{persona["Nombre "]}</h3>
+                    <h3>{persona["Nombre "] || persona["Nombre"]}</h3>
                     <p>{persona.Area} / {persona.Subarea}</p>
                     <p>{persona["Fecha de ingreso"]}</p>
                     <div className="persona_SueldoContainer">
-                      <h4>$ {persona["Sueldo  bruto"]}</h4>
+                    <h4>$ {persona["Sueldo  bruto"] || persona["Sueldo bruto"]}</h4>
                     </div>
                   </div>
                 </div>
@@ -142,11 +142,11 @@ function Organigrama() {
                         <input id={`input-${persona.ID}`} type="file" style={{ display: "none" }} onChange={(e) => uploadImage(e, persona.ID)} />
                     </div>
                   <div className="personaINF_side">
-                    <h3>{persona["Nombre "]}</h3>
+                    <h3>{persona["Nombre "] || persona["Nombre"]}</h3>
                     <p>{persona.Area} / {persona.Subarea}</p>
                     <p>{persona["Fecha de ingreso"]}</p>
                     <div className="persona_SueldoContainer">
-                      <h4>$ {persona["Sueldo  bruto"]}</h4>
+                      <h4>$ {persona["Sueldo  bruto"] || persona["Sueldo bruto"]}</h4>
                     </div>
                   </div>
                 </div>
