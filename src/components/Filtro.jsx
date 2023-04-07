@@ -5,7 +5,7 @@ import "../styles/Filtro.scss"
 
 
 function Filtro() {
-    const data = useSelector(state => state.team)
+    const data = useSelector(state => state.data)
     const allCategory = useSelector( state => state.category)
     const [sortActive, setSortActive] = useState("") 
     const dispatch = useDispatch()
@@ -53,6 +53,9 @@ function Filtro() {
                         ))
                     }
                 </div>
+           </div>
+           <div className="filtro_mensual">
+                
            </div>
         </div>
     )

@@ -1,8 +1,9 @@
-import { GET_TEAM, UPLOAD_IMAGE, SELECT_CATEGORY, SORT_ELEMENT, SORT_ELEMENT_NEGATIVE } from "./action"
+import { GET_TEAM, UPLOAD_IMAGE, SELECT_CATEGORY, SORT_ELEMENT, SORT_ELEMENT_NEGATIVE, GET_DATA } from "./action"
 
 
 // ----> Estado Inicial <----
 const initialState = {
+    data: [],
     team: [],
     teamRespaldo: [],
     category: []
@@ -17,6 +18,12 @@ const reducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 team: payload,
+            }
+            
+        case GET_DATA:
+            return {
+                ...state,
+                data: payload,
                 teamRespaldo: payload
             }
         

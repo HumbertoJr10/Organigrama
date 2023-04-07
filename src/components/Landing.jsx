@@ -3,24 +3,28 @@ import { useEffect, useState } from "react";
 import UseParse from "../hook/useParse";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { selectCategory } from "../redux/action";
+import { getTeam, selectCategory } from "../redux/action";
+import { removeDuplicates } from "../helper/function";
 
 function Landing() {
   const { handlerFile } = UseParse();
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const data = useSelector((state) => state.team);
+  const data = useSelector((state) => state.data);
   const allCategory = useSelector(state => state.category)
   const [category, setCategory] = useState([]);
+  console.log(data)
 
   useEffect(() => {
     if (data.length) {
       dispatch(selectCategory(Object.keys(data[0])));
+      const unicos = removeDuplicates(data)
+      dispatch(getTeam(unicos))
     }
   }, [data]);
 
-  console.log(data);
+  
 
   return (
     <div className="container">

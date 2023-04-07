@@ -1,5 +1,6 @@
 
 export const GET_TEAM = "GET_TEAM";
+export const GET_DATA = "GET_DATA"
 export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';
 export const SELECT_CATEGORY = 'SELECT_CATEGORY';
 export const SORT_ELEMENT = 'SORT_ELEMENT'
@@ -16,6 +17,13 @@ export const getTeam = (team) => {
     return {
         type: GET_TEAM,
         payload: team
+    }
+}
+
+export const getData = (data) => {
+    return {
+        type: GET_DATA,
+        payload: data
     }
 }
 

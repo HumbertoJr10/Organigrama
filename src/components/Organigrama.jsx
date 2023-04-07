@@ -40,7 +40,7 @@ function Organigrama() {
         setManager(data.filter((e) => e["Nivel Jerárquico"] == "Manager"))
         setSupervisor(data.filter((e) => e["Nivel Jerárquico"] == "Supervisor"))
         setCoordinador(data.filter((e) => e["Nivel Jerárquico"] == "Cordinador"))
-        setProfesional(data.filter((e) => e["Nivel Jerárquico"] == "Profesional"))
+        setProfesional(data.filter((e) => e["Nivel Jerárquico"] == "Profesional" || e["Nivel Jerárquico"] == "Profesioal"))
     } 
   }, [data])
 

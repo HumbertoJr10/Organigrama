@@ -1,8 +1,9 @@
 .Filtro_Overlay {
     background-image: url('https://www.elconfidencialdigital.com/media/elconfidencialdigital/images/2023/01/26/2023012610204425431.jpg');
+    background-attachment: fixed;
     position: relative;
     background-position: center;
-    background-repeat: no-repeat;
+    //background-repeat: no-repeat;
     backdrop-filter: blur(10px); 
     background-size: cover;
     width: 100%;
@@ -10,10 +11,11 @@
     display: flex;
     justify-content: center;
     align-items: start;
+    overflow: auto;
 
     .overflow {
         display: flex;
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.733);
@@ -64,5 +66,10 @@
                 }
             }
         }
+    }
+
+    .filtro_mensual {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
     }
 }

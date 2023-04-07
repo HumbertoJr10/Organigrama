@@ -1,7 +1,7 @@
 import Papa from 'papaparse';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getTeam } from '../redux/action';
+import { getTeam, getData } from '../redux/action';
 
 function UseParse() {
 
@@ -14,7 +14,7 @@ function UseParse() {
             header: true,
             complete: function(results) {
               const dataJSON = JSON.parse(JSON.stringify(results.data));
-              dispatch(getTeam(dataJSON));
+              dispatch(getData(dataJSON));
             }
           });
     }
