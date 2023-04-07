@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeDuplicates, calculateTotal, calculateContratation, calculatePromotion, handlerprint } from "../helper/function";
+import { removeDuplicates, calculateTotal, calculateContratation, calculatePromotion, handlerprint, monthSelector } from "../helper/function";
 import { sortElment, sortElmentNegative } from "../redux/action";
 import printIcon from '../assets/printIcon.svg'
 import "../styles/Filtro.scss"
@@ -14,6 +14,7 @@ function Filtro() {
     const [mesSelected, setMesSelected] = useState("")
     const [contratation, setContratation] = useState([])
     const [promotion, setPromotion] = useState([])
+    const language = useSelector(state => state.language)
     const dispatch = useDispatch()
 
     useEffect(()=> {
@@ -86,19 +87,19 @@ function Filtro() {
                 <div className="mes">
                     {
                         mes.map( e => (
-                            <p className={mesSelected == e? "mes_Selected" : "mes_noselected"} onClick={()=> setMesSelected(e)}>Mes {e}</p>
+                            <p className={mesSelected == e? "mes_Selected" : "mes_noselected"} onClick={()=> setMesSelected(e)}>{monthSelector(e, language)}</p>
                         ))
                     }
                 </div>
                 <div className="mes_Stadistic">
                     <div>
-                        <h3>Total Pagado</h3>
+                        <h3>{language == 'ES' ? "Total Pagado": "Total paid"}</h3>
                         {
                             <p>${calculateTotal(data, mesSelected)}</p>
                         }
                     </div>
                     <div>
-                        <h3>Promovido</h3>
+                        <h3>{language == 'ES' ? "Promovido": "Promoted"}</h3>
                         {
                             promotion.map( nombre => (
                                 <p>{nombre}</p>
@@ -106,7 +107,7 @@ function Filtro() {
                         }
                     </div>
                     <div>
-                        <h3>Contratado</h3>
+                        <h3>{language == 'ES' ? "Contratado": "Hired"}</h3>
                         {
                             contratation.map( nombre => (
                                 <p>{nombre}</p>

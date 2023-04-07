@@ -4,7 +4,15 @@ export const GET_DATA = "GET_DATA"
 export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';
 export const SELECT_CATEGORY = 'SELECT_CATEGORY';
 export const SORT_ELEMENT = 'SORT_ELEMENT'
-export const SORT_ELEMENT_NEGATIVE = 'SORT_ELEMENT_NEGATIVE'
+export const SORT_ELEMENT_NEGATIVE = 'SORT_ELEMENT_NEGATIVE';
+export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE'
+
+export const changeLanguage = (LAN) => {
+    return {
+        type: CHANGE_LANGUAGE,
+        payload: LAN
+    }
+}
 
 export const selectCategory = (category) => {
     return {

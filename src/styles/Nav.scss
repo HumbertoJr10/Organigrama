@@ -25,5 +25,40 @@
                 color: #162d74;
             }
         }
+
+        .language_container {
+
+            .ES_button {
+                height: 40px;
+                width: 40px;
+                color: #2B61FE;
+                border: 1px solid #2B61FE;
+                font-size: 13px;
+                cursor: pointer;
+            }
+
+            .ENG_button {
+                height: 40px;
+                width: 40px;
+                color: #2B61FE;
+                border: 1px solid #2B61FE;
+                font-size: 13px;
+                cursor: pointer;
+            }
+            
+            .selected {
+                height: 40px;
+                width: 40px;
+                color: white;
+                background-color: #2B61FE;
+                border: 1px solid #2B61FE;
+                font-size: 13px;
+                cursor: pointer;
+            }
+        }
+        .button_container {
+            display: flex;
+            width: 200px;
+        }
     }
 }

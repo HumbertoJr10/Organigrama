@@ -24,26 +24,31 @@
     .modalWindow {
         width: 500px;
         height: 300px;
-        background-color: rgba(0, 0, 0, 0.87);
+        background-color: #2B61FE;
         backdrop-filter: blur(5px); 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         border-radius: 20px;
+        color: white;
 
         h1 {
             color: white;
 
+        }
+
+        input {
+            margin-top: 20px;
         }
     }
 
     .previewModal {
         position: absolute;
         width: 80%;
-        background-color: rgb(31, 31, 31);
+        background-color: #eee;
         backdrop-filter: blur(5px); 
-        color: white;
+        color: black;
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         grid-template-rows: 1fr 50px;
@@ -85,14 +90,18 @@
             grid-column: 1 / span 10;
 
             button {
-                background-color: #999;
+                background-color: #2B61FE;
                 border: none;
                 cursor: pointer;
                 color: #eee;
                 width: 200px;
                 height: 30px;
                 border-radius: 20px;
-
+                &:hover {
+                    background-color: #2042aa;
+        
+                    
+                }
             }
         }
     }

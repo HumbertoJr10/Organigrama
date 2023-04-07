@@ -13,7 +13,7 @@ function Landing() {
 
   const data = useSelector((state) => state.data);
   const allCategory = useSelector(state => state.category)
-  const [category, setCategory] = useState([]);
+  const language = useSelector( state => state.language)
   console.log(data)
 
   useEffect(() => {
@@ -30,7 +30,10 @@ function Landing() {
     <div className="container">
       <div className="overlay"></div>
       <div className="modalWindow">
-        <h1>Bienvenido</h1>
+        <h1>{language=='ES'? "Bienvenido" : "Welcome"}</h1>
+        <p>{language=="ES"? 
+          "Crea tu propio organigrama a partir de un archivo .csv" : 
+          "Create your own organization chart from a .csv file"}</p>
         <input onChange={handlerFile} type="file" accept=".csv" name="file" />
       </div>
 
@@ -48,7 +51,7 @@ function Landing() {
           })}
 
           <div className="buttonContainer">
-            <button onClick={()=> navigate('/Organizationchart')}>Continuar</button>
+            <button onClick={()=> navigate('/Organizationchart')}>{language=='ES'? "Continuar" : "Continue"}</button>
           </div>
         </div>
       )}

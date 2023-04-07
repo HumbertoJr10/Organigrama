@@ -95,3 +95,33 @@ export function calculatePromotion(arr, mes) {
 export const handlerprint = () => {
     window.print()
   }
+
+export const monthSelector = (month, Lan) => {
+    if (Lan == 'ES') {
+        if (month == 1) return 'Enero'
+        if (month == 2) return 'Febrero'
+        if (month == 3) return 'Marzo'
+        if (month == 4) return 'Abril'
+        if (month == 5) return 'Mayo'
+        if (month == 6) return 'Junio'
+        if (month == 7) return 'Julio'
+        if (month == 8) return 'Agosto'
+        if (month == 9) return 'Septiembre'
+        if (month == 10) return 'Octubre'
+        if (month == 11) return 'Noviembre'
+        if (month == 12) return 'Diciembre'
+    } else {
+        if (month == 1) return 'January'
+        if (month == 2) return 'February'
+        if (month == 3) return 'March'
+        if (month == 4) return 'April'
+        if (month == 5) return 'May'
+        if (month == 6) return 'June'
+        if (month == 7) return 'July'
+        if (month == 8) return 'August'
+        if (month == 9) return 'September'
+        if (month == 10) return 'October'
+        if (month == 11) return 'November'
+        if (month == 12) return 'December'
+    }
+}

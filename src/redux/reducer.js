@@ -1,4 +1,4 @@
-import { GET_TEAM, UPLOAD_IMAGE, SELECT_CATEGORY, SORT_ELEMENT, SORT_ELEMENT_NEGATIVE, GET_DATA } from "./action"
+import { GET_TEAM, UPLOAD_IMAGE, SELECT_CATEGORY, SORT_ELEMENT, SORT_ELEMENT_NEGATIVE, GET_DATA, CHANGE_LANGUAGE } from "./action"
 
 
 // ----> Estado Inicial <----
@@ -6,13 +6,20 @@ const initialState = {
     data: [],
     team: [],
     teamRespaldo: [],
-    category: []
+    category: [],
+    language: "ES"
 }
 
 // ---> REDUCER <-----
 
 const reducer = (state = initialState, { type, payload }) => {
     switch (type) {
+
+        case CHANGE_LANGUAGE: 
+            return {
+                ...state,
+                language: payload
+            }
 
         case GET_TEAM:
             return {
