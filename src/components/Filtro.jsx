@@ -101,7 +101,7 @@ function Filtro() {
                     <div>
                         <h3>{language == 'ES' ? "Promovido": "Promoted"}</h3>
                         {
-                            promotion.map( nombre => (
+                            promotion?.map( nombre => (
                                 <p>{nombre}</p>
                             ))
                         }

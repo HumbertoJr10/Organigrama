@@ -70,15 +70,13 @@ export function calculatePromotion(arr, mes) {
         nombre: e["Nombre "]
     })) 
     
-    console.log(evaluar)
-    console.log(empleadosSalary)
     const promovidos = []
 
     for (let f=0; f<empleadosSalary.length; f++) {
         for ( let i=0; i<evaluar.length; i++) {
             if (
                 empleadosSalary[f].id == evaluar[i].id && 
-                empleadosSalary[f].salary > evaluar[i].salary
+                empleadosSalary[f].salary * 1  > evaluar[i].salary * 1
                 ) {
                 promovidos.push(empleadosSalary[f])
             }
