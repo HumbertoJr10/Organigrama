@@ -10,7 +10,7 @@ npm run dev
 
 Nota: Este proyecto fue realizado pensado para una base de datos en una Hoja de calculo de google, y siguiendo un patron en el cual los datos esten tabulados con el siguiente formato:
 
-Mes	Nombre 	ID	Fecha de ingreso	Sueldo  bruto	División	Area	Subarea	ID Lider	Nivel Jerárquico	Raza
+Mes,	Nombre, 	ID,	Fecha de ingreso,	Sueldo bruto,	División,	Area,	Subarea,	ID Lider,	Nivel Jerárquico.
 
 Por tal motivo, para su optimo uso debe mantener el formato de la informacion. Asi mismo para el ordenamiento basado en el nivel jerarquico es importante que dichos niveles coincidan con los siguiente: Manager, Supervisor, Profesioal, Cordinador.
 
