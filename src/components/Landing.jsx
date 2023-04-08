@@ -1,20 +1,32 @@
 import "../styles/landing.scss";
 import { useEffect, useState } from "react";
-import UseParse from "../hook/useParse";
+import Papa from 'papaparse';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { getTeam, selectCategory } from "../redux/action";
 import { removeDuplicates } from "../helper/function";
+import { getData } from '../redux/action';
 
 function Landing() {
-  const { handlerFile } = UseParse();
+  
+  const handlerFile = (e)=> {
+    Papa.parse(e.target.files[0], {
+        download: true,
+        header: true,
+        complete: function(results) {
+          const dataJSON = JSON.parse(JSON.stringify(results.data));
+          dispatch(getData(dataJSON));
+        }
+      });
+}
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const data = useSelector((state) => state.data);
   const allCategory = useSelector(state => state.category)
   const language = useSelector( state => state.language)
-  console.log(data)
+  
 
   useEffect(() => {
     if (data.length) {

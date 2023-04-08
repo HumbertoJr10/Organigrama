@@ -20,7 +20,6 @@ export function calculateTotal(arr, mes) {
     const totaldepagos = arr.filter( e => e.Mes[0] == mes) 
     let acumulado = 0
 
-    console.log(mes)
 
     for (let f=0; f<totaldepagos.length; f++) {
         acumulado = (totaldepagos[f]["Sueldo  bruto"] * 1) + acumulado
