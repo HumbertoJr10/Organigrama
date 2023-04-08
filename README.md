@@ -2,6 +2,7 @@
 
 # Individual Project - Organigrama
 # STATUS: Finalizado
+Deploy: https://nala-challenge.netlify.app/
 
 ## Codigo para iniciar el proyecto:
 
